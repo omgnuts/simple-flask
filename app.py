@@ -12,7 +12,7 @@ def run_classifier():
 	value = request.args.get('value', default = '*', type = str)
 	return ml.classify(value)
 
-# start python 
+# start flask server 
 if __name__ == "__main__":
 	app.run()
 
