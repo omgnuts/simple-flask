@@ -1,6 +1,6 @@
 # A simple-flask
 
-### A. Requirements: Python flask is required: 
+### A. Requirements: Python flask is required.
 ```
 pip install flask
 ```
@@ -21,7 +21,7 @@ Go to http://localhost:5000/. Also try http://localhost:5000/classifier?value=he
 +-- templates
 |   +-- index.html
 +-- app.py                         ---------  (1)
-+-- model.py                       ---------  (1)
++-- model.py                       ---------  (2)
 ```
 
 ##### (1) app.py is the entry point for the application server. 
