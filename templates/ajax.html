@@ -1,0 +1,31 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+    <script type="text/javascript" defer>
+
+    function caller() {
+        ajax(window.location.search.substring(1))
+    }
+
+    function ajax(params) {
+        console.log(params)
+        $.ajax({
+            url: "classifier?value=hello-via-ajax",
+            crossDomain: true
+        }).done(function (result) {
+            $('#result').text(result)
+        })
+    }
+
+    $(document).ready(function () {
+        console.log('document is ready')
+        caller();
+    });
+
+    </script>
+
+</head>
+<body>
+    <div id="result"></div>
+</body>
+</html>

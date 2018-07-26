@@ -1,11 +1,17 @@
 import model as ml
 from flask import Flask, render_template, json, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app) # Provide cross-origin-resource-sharing support
 
 @app.route('/')
 def main():
 	return render_template('index.html')
+
+@app.route('/ajax')
+def ajax_example():
+	return render_template('ajax.html')
 
 @app.route('/classifier', methods=['GET'])
 def run_classifier():
@@ -14,5 +20,5 @@ def run_classifier():
 
 # start flask server 
 if __name__ == "__main__":
-	app.run()
+	app.run(debug=True) 
 
