@@ -18,6 +18,11 @@ def run_classifier():
 	value = request.args.get('value', default = '*', type = str)
 	return ml.classify(value)
 
+@app.route('/postjson', methods=['POST'])
+def run_postjson():
+    jsond = request.json
+    return json.dumps(jsond)
+
 # start flask server 
 if __name__ == "__main__":
 	app.run(debug=True) 

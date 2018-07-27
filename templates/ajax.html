@@ -7,11 +7,17 @@
         ajax(window.location.search.substring(1))
     }
 
-    function ajax(params) {
-        console.log(params)
+    function ajax(params) {        
+        let data = JSON.stringify({ p1: "v1" })
+        // let jj = "{\"p1\":\"v1\"}"
+        
+        $('#input').text(data)
         $.ajax({
-            url: "classifier?value=hello-via-ajax",
-            crossDomain: true
+            url: "/postjson",
+            crossDomain: true,
+            type: "POST",
+            data: data,
+            contentType: "application/json"
         }).done(function (result) {
             $('#result').text(result)
         })
@@ -26,6 +32,7 @@
 
 </head>
 <body>
+    <div id="input"></div>
     <div id="result"></div>
 </body>
 </html>
